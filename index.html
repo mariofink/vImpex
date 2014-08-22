@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>vImpex</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <textarea name="input" id="input" cols="60" rows="10">
+
+
+## GYPS-4162 BEGIN
+
+
+
+## Subtask GYPS-6045
+#Define the permissions
+INSERT_UPDATE BooleanPermission;Unit(uid);code[unique=true];UserGroups(uid)[collection-delimiter=|]
+;GOODYEAR_DEFAULT;OM_countryOfOrigin;Perm_SK_OrderManagement|Perm_SI_OrderManagement|Perm_CZ_OrderManagement|Perm_HU_OrderManagement|Perm_RO_OrderManagement|Perm_BG_OrderManagement|Perm_HR_OrderManagement
+
+## GYPS-6045 END
+
+
+## GYPS-4162 END
+
+
+### Repeated from 201407 ###
+### GYPS-4697 ###
+
+
+UPDATE B2BPermission;code[unique=true];Unit(uid)
+;CS_managePictures;GOODYEAR_DEFAULT
+
+INSERT_UPDATE B2BUserGroup;Unit(uid);uid[unique=true];groups(uid);Permissions(code)
+;GOODYEAR_DEFAULT;FR_CasingPictureMgmt;CasingPictureMgmt;CS_managePictures
+;GOODYEAR_DEFAULT;UK_CasingPictureMgmt;CasingPictureMgmt;CS_managePictures
+;GOODYEAR_DEFAULT;ES_CasingPictureMgmt;CasingPictureMgmt;CS_managePictures
+;GOODYEAR_DEFAULT;TR_CasingPictureMgmt;CasingPictureMgmt;CS_managePictures
+
+UPDATE B2BUserGroup;uid[unique=true];site(uid)
+;ES_CasingPictureMgmt;goodyearsite_spain
+;FR_CasingPictureMgmt;goodyearsite_france
+;UK_CasingPictureMgmt;goodyearsite_uk
+;TR_CasingPictureMgmt;goodyearsite_turkey
+
+UPDATE B2BUserGroup;uid[unique=true];uid
+;ES_CasingPictureMgmt;Perm_ES_CS_PictureMgmt
+;FR_CasingPictureMgmt;Perm_FR_CS_PictureMgmt
+;UK_CasingPictureMgmt;Perm_UK_CS_PictureMgmt
+;TR_CasingPictureMgmt;Perm_TR_CS_PictureMgmt
+
+INSERT_UPDATE B2BUserGroup;site(uid);uid[unique=true];Unit(uid);groups(uid);Permissions(code)
+
+;goodyearsite_austria;Perm_AT_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_belgium;Perm_BE_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_czech;Perm_CZ_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_denmark;Perm_DK_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_estonia;Perm_EE_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_finland;Perm_FI_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_france;Perm_FR_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_germany;Perm_DE_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_greece;Perm_GR_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_hungary;Perm_HU_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_ireland;Perm_IE_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_italy;Perm_IT_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_latvia;Perm_LV_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_lithuania;Perm_LT_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_luxembourg;Perm_LU_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_netherlands;Perm_NL_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_norway;Perm_NO_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_portugal;Perm_PT_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_reference;Perm_GB_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_slovakia;Perm_SK_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_slovenia;Perm_SI_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_spain;Perm_ES_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_sweden;Perm_SE_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_switzerland;Perm_CH_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_turkey;Perm_TR_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+;goodyearsite_unitedkingdom;Perm_GB_CS_PictureMgmt;GOODYEAR_DEFAULT;CasingPictureMgmt;CS_managePictures
+
+
+
+### END GYPS-4697 ###
+
+        </textarea>
+        <button type="button" id="btnRefresh">Refresh</button>
+        <div id="result">
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
