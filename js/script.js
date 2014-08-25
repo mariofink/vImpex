@@ -38,7 +38,22 @@
       cell.innerHTML = content;
       row.appendChild(cell);
     }
-    return row
+    return row;
+  }
+
+  function renderIncludes(includes) {
+    var container = document.createElement("section");
+    var heading = document.createElement("h2");
+    heading.innerHTML = "Includes";
+    container.appendChild(heading);
+    var list = document.createElement("ul");
+    for (var j = 0, len = includes.length; j < len; j++) {
+      var item = document.createElement("li");
+      item.innerHTML = includes[j];
+      list.appendChild(item);
+    }
+    container.appendChild(list);
+    return container;
   }
 
   /*
@@ -46,6 +61,7 @@
   */
   function separateData(lines) {
     var tableDataObjects = [];
+    var includes = [];
     var data = null;
     for (var i = 0, len = lines.length; i < len; i++) {
       var line = lines[i].trim();
@@ -53,7 +69,11 @@
         // ignore empty lines comments and variable definitions
         continue;
       }
-      if (line.indexOf("INSERT") > -1 || line.indexOf("UPDATE") > -1 || line.indexOf("REMOVE") > -1) {
+      if (line.indexOf("impex.includeExternalData") > -1) {
+        includes.push(line);
+        continue;
+      }
+      if (line.toLowerCase().indexOf("insert") > -1 || line.toLowerCase().indexOf("update") > -1 || line.toLowerCase().indexOf("remove") > -1) {
         if (data !== null) {
           tableDataObjects.push(data);
         }
@@ -68,12 +88,16 @@
     if (data !== null) {
       tableDataObjects.push(data);
     }
-    return tableDataObjects;
+    return {
+      tables: tableDataObjects,
+      includes: includes
+      };
   }
 
   function refresh(input, filename) {
     var lines = input.split("\n");
-    var tables = separateData(lines);
+    var data = separateData(lines);
+    var tables = data.tables;
     result.innerHTML = "";
     if (filename) {
       result.innerHTML = "<h2>" + filename + "</h2>";
@@ -81,6 +105,9 @@
     for (var i = 0, len = tables.length; i < len; i++) {
       result.appendChild(renderTable(tables[i]));
     }
+
+    result.appendChild(renderIncludes(data.includes));
+
   }
 
   function initDragAndDrop() {
