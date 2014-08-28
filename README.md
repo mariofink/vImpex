@@ -4,7 +4,9 @@ vImpex
 Daft name for a little tool to visualise the content of impex files used by the [Hybris ecommerce platform](http://hybris.com).
 
 ## Instructions:
-Download or clone this repository and open it in your browser.
+[Use it online](http://mariofink.github.io/vImpex/)
+
+Or download/clone this repository and open it in your browser.
 
 Then you can just drag an impex file from your desktop onto it to have its contents displayed in a more readable tabular format. 
 
