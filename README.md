@@ -4,7 +4,7 @@ vImpex
 Daft name for a little tool to visualise the content of impex files used by the [Hybris ecommerce platform](http://hybris.com).
 
 ## Instructions:
-**[Use it online](http://mariofink.github.io/vImpex/)**
+**[Use it online](http://mariofink.github.io/vImpex/)** (don’t worry, no data will be uploaded to anywhere)
 
 Or download/clone this repository and open it in your browser.
 
