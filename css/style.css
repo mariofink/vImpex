@@ -1,0 +1,37 @@
+body, textarea {
+    font-family: Source Code Pro, monospace;
+}
+textarea {
+    width: 100%;
+}
+.inputArea {
+    display: table;
+    border-spacing: 1em;
+    width: 100%;
+}
+.inputArea div {
+    display: table-cell;
+}
+#dropbox {
+    background: #C0FFEE;
+    vertical-align: middle;
+    text-align: center;
+}
+table {
+    margin: 2em auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+caption {
+    background: teal;
+    color: white;
+}
+th, td {
+    border: 1px solid #eee;
+    padding: 0.25em;
+    text-align: left;
+}
+tr:hover {
+    background: #C0FFEE;
+}
